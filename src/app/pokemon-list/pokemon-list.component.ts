@@ -1,13 +1,20 @@
-import { Injectable } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
-@Injectable({
-  providedIn: 'root'
+@Component({
+  selector: 'app-pokemon-list',
+  templateUrl: './pokemon-list.component.html',
+  styleUrls: ['./pokemon-list.component.scss']
 })
-export class ApiPokemonService {
+export class PokemonListComponent implements OnInit {
 
-  pokemons = [];
+  pokemons: any[] = [];
 
-  constructor() { }
+  constructor() {
+    this.fetchKantoPokemon();
+  }
+
+  ngOnInit(): void {
+  }
 
   fetchKantoPokemon(){
     fetch('https://pokeapi.co/api/v2/pokemon?limit=151')
@@ -30,4 +37,5 @@ export class ApiPokemonService {
       console.log(pokeData)
       })
     }
+
 }

@@ -9,9 +9,11 @@ import { ApiPokemonService } from '../api-pokemon.service';
 
 export class PokemonItemComponent {
 
-  constructor(
-    private apiPokemon: ApiPokemonService
-  ) {}
+  
+
+  constructor(private apiPokemon: ApiPokemonService) {
+    this.apiPokemon.fetchKantoPokemon();
+  }
 
   // ngOnInit(): void {
   // }

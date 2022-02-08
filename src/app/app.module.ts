@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { PokemonItemComponent } from './pokemon-item/pokemon-item.component';
 import { PokedexComponent } from './pages/pokedex/pokedex.component';
+import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { PokedexComponent } from './pages/pokedex/pokedex.component';
     NavbarComponent,
     PokemonItemComponent,
     PokedexComponent,
+    PokemonListComponent,
     
   ],
   imports: [
