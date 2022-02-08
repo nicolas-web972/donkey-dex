@@ -1,13 +1,19 @@
 <app-navbar></app-navbar>
 
 <div class="container">
-<h1>Pokédex</h1>
+  <h1>Pokédex</h1>
 </div>
 
-<div class="container">
-<p></p>
-
-
-
-
+<div class="container filter">
+  <p>Filtrer par:</p>
+  <select class="form-select" aria-label="Default select example">
+    <option selected>Type</option>
+    <option value="1">Tous</option>
+    <option value="1">Poison</option>
+    <option value="2">Feu</option>
+    <option value="3">Plante</option>
+    <option value="4">Electric</option>
+  </select>
+  
+<app-pokemon-item></app-pokemon-item>
 <router-outlet></router-outlet>
