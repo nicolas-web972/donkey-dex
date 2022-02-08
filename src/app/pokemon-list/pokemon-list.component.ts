@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pokemon-list',
@@ -8,10 +9,14 @@ import { Component, OnInit } from '@angular/core';
 export class PokemonListComponent implements OnInit {
 
   pokemons: any[] = [];
+  @Input() name: string | undefined;
 
-  constructor() {
+  constructor(private router:Router) {
     this.fetchKantoPokemon();
-    this.fetchPokemonData
+  }
+
+  @HostListener("click") click() {
+    this.goToPokemon();
   }
 
   ngOnInit(): void {
@@ -21,23 +26,24 @@ export class PokemonListComponent implements OnInit {
     fetch('https://pokeapi.co/api/v2/pokemon?limit=151')
      .then(response => response.json())
      .then((allpokemon) => {
-       console.log(allpokemon);
        this.pokemons = allpokemon.results;
-       console.log(this.pokemons);
-       allpokemon.results.forEach((pokemon:any) => {
-       this.fetchPokemonData(pokemon);
+       allpokemon.results.forEach((pokemon:any, index:number) => {
+       this.fetchPokemonData(pokemon, index);
      })
     })
    }
 
-   fetchPokemonData(pokemon:any){
+   fetchPokemonData(pokemon:any, index:number){
     let url = pokemon.url // <--- this is saving the pokemon url to a      variable to us in a fetch.(Ex: https://pokeapi.co/api/v2/pokemon/1/)
       fetch(url)
       .then(response => response.json())
       .then((pokeData) => {
-      // console.log(pokeData)
-      // this.pokemons = pokeData;
+        this.pokemons[index].data = pokeData;
+        //console.log(this.pokemons[index])
       })
     }
 
+    goToPokemon() {
+      console.log(this.router.navigate(["/pokemon", this.name]));
+    }
 }
