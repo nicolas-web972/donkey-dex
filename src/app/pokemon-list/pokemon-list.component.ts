@@ -11,6 +11,7 @@ export class PokemonListComponent implements OnInit {
 
   constructor() {
     this.fetchKantoPokemon();
+    this.fetchPokemonData
   }
 
   ngOnInit(): void {
@@ -23,9 +24,9 @@ export class PokemonListComponent implements OnInit {
        console.log(allpokemon);
        this.pokemons = allpokemon.results;
        console.log(this.pokemons);
-     /*allpokemon.results.forEach((pokemon:any) => {
+       allpokemon.results.forEach((pokemon:any) => {
        this.fetchPokemonData(pokemon);
-     })*/
+     })
     })
    }
 
@@ -33,8 +34,9 @@ export class PokemonListComponent implements OnInit {
     let url = pokemon.url // <--- this is saving the pokemon url to a      variable to us in a fetch.(Ex: https://pokeapi.co/api/v2/pokemon/1/)
       fetch(url)
       .then(response => response.json())
-      .then(function(pokeData){
-      console.log(pokeData)
+      .then((pokeData) => {
+      // console.log(pokeData)
+      // this.pokemons = pokeData;
       })
     }
 

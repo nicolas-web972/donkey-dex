@@ -1,3 +1,12 @@
-<div *ngFor="let pokemon of pokemons">
+<div class="container pokemon" *ngFor="let pokemon of pokemons">
+  <div class="row">
+    <div class="col-8" >
       <h2>{{ pokemon.name }}</h2>
+      <span class="badge rounded-pill bg-primary">Type</span>
+    </div>
+    <div class="col-4">
+      <i class="bi bi-star-fill"></i>
+      <img src="https://via.placeholder.com/150x150"/>
+    </div>
+  </div>
 </div>
