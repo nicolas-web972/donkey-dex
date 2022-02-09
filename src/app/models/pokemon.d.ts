@@ -7,10 +7,11 @@ export interface PokemonResponse {
 export interface Pokemon {
   name: string;
   url: string;
-  data?: Pokemon;
+  data?: PokemonData;
 }
 
-export interface PokemonTypeDetails {
+export interface PokemonData {
+  id: number;
   types: PokemonType[];
   sprites: PokemonSprites;
 }
@@ -18,6 +19,11 @@ export interface PokemonTypeDetails {
 export interface PokemonType {
   slot: number;
   type: PokemonTypeDetails;
+}
+
+export interface PokemonTypeDetails {
+  name: string;
+  url: string;
 }
 
 export interface PokemonSprites {

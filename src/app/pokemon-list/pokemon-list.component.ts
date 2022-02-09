@@ -43,7 +43,7 @@ export class PokemonListComponent implements OnInit {
       .pipe(delay(1000))
       .subscribe((pokeData: any) => {
         this.pokemons[index].data = pokeData;
-        console.log(pokeData);
+        //console.log(pokeData);
       });
   }
 

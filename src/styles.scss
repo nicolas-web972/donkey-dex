@@ -6,4 +6,20 @@ h1 {
   text-align: center;
 }
 
+$pokemon-type-colors: (
+  grass: green,
+  fire: orange,
+  water: blue,
+  poison: purple,
+);
+
+.pokemon-background-type {
+  background-color: grey;
+}
+
+@each $name, $hex in $pokemon-type-colors {
+  .pokemon-background-type-#{$name} {
+    background-color: $hex;
+  }
+}
 
