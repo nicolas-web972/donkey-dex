@@ -23,8 +23,13 @@ i:hover {
 
 .badge {
   padding: 1em 2em;
+  text-transform: capitalize;
 }
 
 .pos-relative {
   position: relative;
+}
+
+h2 {
+  text-transform: capitalize;
 }
