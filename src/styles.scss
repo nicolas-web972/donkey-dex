@@ -1,9 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~bootstrap/scss/bootstrap';
 @import "~bootstrap-icons/font/bootstrap-icons.css";
+@import url('https://fonts.googleapis.com/css2?family=Play&display=swap');
 
 h1 {
   text-align: center;
+}
+
+body {
+  background-color:#2a9d8f;
+  font-family: 'Play' ;
 }
 
 $pokemon-type-colors: (
