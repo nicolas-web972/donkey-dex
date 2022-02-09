@@ -44,6 +44,6 @@ export class PokemonListComponent implements OnInit {
     }
 
     goToPokemon() {
-      console.log(this.router.navigate(["/pokemon", this.name]));
+      this.router.navigate(["/pokemon", this.name]);
     }
 }
