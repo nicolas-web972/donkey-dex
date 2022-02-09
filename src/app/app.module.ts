@@ -7,6 +7,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { PokemonItemComponent } from './pokemon-item/pokemon-item.component';
 import { PokedexComponent } from './pages/pokedex/pokedex.component';
 import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
+import { ListLoaderComponent } from './list-loader/list-loader.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -16,11 +18,13 @@ import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
     PokemonItemComponent,
     PokedexComponent,
     PokemonListComponent,
-    
+    ListLoaderComponent,
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

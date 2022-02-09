@@ -1,3 +1,5 @@
+<app-list-loader [isLoading]="isLoading"></app-list-loader>
+
 <div class="container pokemon" *ngFor="let pokemon of pokemons">
   <div class="row">
     <div class="col-8" >
@@ -9,7 +11,9 @@
     </div>
     <div class="col-4">
       <i class="bi bi-star-fill" (click)=goToPokemon()></i>
+      <app-list-loader [isLoading]="!pokemon?.data"></app-list-loader>
       <img
+      *ngIf="pokemon?.data"
       [src]="pokemon?.data?.sprites.front_default"
       class="img-fluid rounded-start"
       />
