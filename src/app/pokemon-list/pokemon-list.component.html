@@ -9,7 +9,10 @@
     </div>
     <div class="col-4">
       <i class="bi bi-star-fill" (click)=goToPokemon()></i>
-      <img src="https://via.placeholder.com/150x150"/>
+      <img
+      [src]="pokemon?.data?.sprites.front_default"
+      class="img-fluid rounded-start"
+      />
     </div>
   </div>
 </div>

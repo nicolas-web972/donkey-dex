@@ -39,7 +39,7 @@ export class PokemonListComponent implements OnInit {
       .then(response => response.json())
       .then((pokeData) => {
         this.pokemons[index].data = pokeData;
-        //console.log(this.pokemons[index])
+        console.log(pokeData)
       })
     }
 
